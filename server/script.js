@@ -8,7 +8,7 @@ const DB = 'mongodb+srv://Mongo2099:futureman2099@cluster0.inxix.mongodb.net/Mem
 
 mongoose.connect(DB)
 .then(() => console.log('Connection To MemosDB successfull!'))
-.catch(() => console.log('Error Occured!'))
+.catch((err) => console.log('Error Occured!' + err))
 
 const email = 'darabmonib123@gmail.com';
 const password = 'paradox123';
