@@ -58,11 +58,11 @@ export default function Home ({ displayName, memos }) {
                 </div>
                   <div className="flex flex-row pb-14 pl-8">
 
-                      <Image src="https://freepikpsd.com/file/2019/10/delete-icon-png-red-5-Transparent-Images.png" alt="Delete!" className="h-auto w-12 hover:scale-150 transition-all hover:transition-all" onClick={() => {
+                      <img src="https://freepikpsd.com/file/2019/10/delete-icon-png-red-5-Transparent-Images.png" alt="Delete!" className="h-auto w-12 hover:scale-150 transition-all hover:transition-all" onClick={() => {
                         DeleteElem(each._id)
                       }} />
 
-                      <Image src="Edit.png" alt="Edit!" className="h-auto w-12 hover:opacity-100 opacity-100 hover:scale-150 transition-all hover:transition-all" onClick={() => {
+                      <img src="Edit.png" alt="Edit!" className="h-auto w-12 hover:opacity-100 opacity-100 hover:scale-150 transition-all hover:transition-all" onClick={() => {
                         openModal(each._id)
                       }} />
 
