@@ -31,6 +31,7 @@ export default function Home() {
       let data = {email: email.value, password: password.value};
       await fetch(`${ip}/login`, {
         method: 'POST',
+        mode:'no-cors',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
       }).then( async (response) => {

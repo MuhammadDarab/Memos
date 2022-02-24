@@ -4,7 +4,9 @@ import ip from "../components/ip";
 
 export async function snapSend(router) {
 
-    let dataFetch = await fetch(`${ip}/home`)
+    let dataFetch = await fetch(`${ip}/home`, {
+        mode:'no-cors'
+    })
     let displayName = await dataFetch.json();
     let { display } = displayName
 
@@ -21,6 +23,7 @@ export async function snapSend(router) {
     let data = {picture64: img64, author:display, desc:description};
     await fetch(`${ip}/submit`, {
       method: 'POST',
+      mode:'no-cors',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data)
     }).then(() => {
