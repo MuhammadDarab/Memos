@@ -78,6 +78,12 @@ app.get('/home', (req, res) => {
 
 })
 
+app.get('/test', (req, res) => {
+
+    res.send('Greetings!')
+
+})
+
 app.post('/submit', (req, res) => {
 
     let currentdate = new Date(); 
