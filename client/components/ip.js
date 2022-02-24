@@ -1,1 +1,1 @@
-export default 'https://2c26-43-248-13-46.ngrok.io';
+export default 'https://memosbackend.vercel.app';
