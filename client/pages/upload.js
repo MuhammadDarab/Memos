@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react';
 
-let ip = 'https://13da-103-57-168-179.ngrok.io'
+let ip = 'http://localhost:8080'
 
 export async function snapSend(router) {
 
@@ -16,6 +16,8 @@ export async function snapSend(router) {
     
     context.drawImage(video, 0, 0, 640, 480);
     let img64 = canvas.toDataURL();
+
+    console.log(img64)
 
     let data = {picture64: img64, author:display, desc:description};
     await fetch(`${ip}/submit`, {

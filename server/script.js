@@ -79,13 +79,20 @@ app.get('/home', (req, res) => {
 
 app.post('/submit', (req, res) => {
 
+    let currentdate = new Date(); 
+    let datetime =  "Published At: "+ currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ", " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear()  
+
     if(req.body.picture64 && req.body.author && req.body.desc){
-        
+        console.log('Successfully got The Request, Sending it to DATABASE!')
         let newMemo = new memos({
 
             picture64:req.body.picture64,
             author:req.body.author,
-            desc:req.body.desc
+            desc:req.body.desc,
+            createdAt: datetime
 
         })
 
@@ -107,6 +114,27 @@ app.get('/memos', (req, res) => {
 
 })
 
+app.delete('/memos/:id', (req, res) => {
 
-app.listen(PORT, () => {console.log(`Listening on ${PORT}`)})
+    memos.findOneAndRemove({ _id: req.params.id }).then(() => {
+        console.log(`Telling MongoDB to delete ${req.params.id}`)
+    });
+
+})
+
+app.patch('/memos/:id', async (req, res) => {
+
+    console.log(req.body.toChange)
+    console.log(req.body.toBeChanged)
+
+    // memos.findOne({_id: req.params.id}).then((result) => { 
+    //     result.update({desc: req.body.desc})
+    // })
+   await memos.findOneAndUpdate({ desc: req.body.toBeChanged },{ desc: req.body.toChange })
+   console.log("changes Made");
+
+})
+
+
+app.listen(PORT, () => {console.log(`http://localhost:${PORT}`)})
 

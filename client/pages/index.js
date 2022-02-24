@@ -1,10 +1,19 @@
-import styles from '../styles/Home.module.css'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react';
-import FOOD from './home'
 
-let ip = 'https://13da-103-57-168-179.ngrok.io'
+let ip = 'http://localhost:8080'
+
+function err(res){
+
+  if(res === "OK"){
+    errBox.style.opacity = '0'
+  }
+  else{
+    let errbox = document.querySelector('#errBox');
+    errbox.innerText = res;
+    errbox.style.opacity = '1'
+  }
+
+}
 
 export default function Home() {
 
@@ -30,15 +39,19 @@ export default function Home() {
         if(response.status === 200){
           console.log('Logging you in🎉')
           flag = true;
+          err("OK");
         }
         else if(response.status === 401){
           console.log('Password Mismatch⛔, Retry Please!')
+          err('Password Mismatch⛔, Retry Please!');
         }
         else if(response.status === 404){
           console.log('Email Not found❌, Try Again!')
+          err('Email Not found❌, Try Again!');
         }
         else{
           console.log('Server had an error, Sorry For inconvenience🛑')
+          err('Server had an error, Sorry For inconvenience🛑');
         }
 
         resp = await response.json();
@@ -90,6 +103,9 @@ export default function Home() {
         <div className='shadow-xl border-blue-300 rounded-xl text-center font-bold px-8 py-4 m-4 hover:scale-125 hover:transition-all transition-all' onClick={() => router.push('/signup')}>
           Sign Up
         </div>
+      </div>
+
+      <div id='errBox' className='opacity-0 hover:transition-all transition-all  rounded-xl text-xl text-center font-bold w-96 mx-auto p-8 bg-red-400 border-[1px] border-slate-500 text-white'>
       </div>
 
     </div>

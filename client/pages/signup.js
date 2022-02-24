@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-let ip = 'https://13da-103-57-168-179.ngrok.io'
+let ip = 'http://localhost:8080'
 
 
 const signup = () => {

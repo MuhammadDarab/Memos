@@ -13,6 +13,10 @@ const memosSchema = new mongoose.Schema({
     desc:{
         type:String,
         required:true
+    },
+    createdAt:{
+        type:String,
+        required:true
     }
 
 })
