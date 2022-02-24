@@ -30,7 +30,7 @@ export async function snapSend(router) {
 
 }
 
-const upload = () => {
+const Upload = () => {
 
     const router = useRouter();
 
@@ -75,4 +75,4 @@ const upload = () => {
     </>);
 }
 
-export default upload;
+export default Upload;

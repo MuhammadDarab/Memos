@@ -19,7 +19,7 @@ export const getStaticProps = async () => {
 
 }
 
-export default function home ({ displayName, memos }) {
+export default function Home ({ displayName, memos }) {
 
   let { display } = displayName
   const router = useRouter();
@@ -46,8 +46,8 @@ export default function home ({ displayName, memos }) {
         memos.map(each => {
 
           return(
-            <div className="p-8">
-              <div key={each._id} className="shadow-lg mx-auto w-[600px]">
+            <div key={each._id} className="p-8">
+              <div className="shadow-lg mx-auto w-[600px]">
                 <div className="text-left p-8 drop-shadow-md object-cover">
                   <div className="bg-blue-900">
                     <img src={each.picture64} />
