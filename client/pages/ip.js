@@ -1,1 +1,1 @@
-export default 'http://localhost:8080';
+export default 'https://2c26-43-248-13-46.ngrok.io';
