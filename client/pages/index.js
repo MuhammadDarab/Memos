@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-let ip = 'http://localhost:8080'
+let ip = 'https://memosback.vercel.app'
 
 function err(res){
 
