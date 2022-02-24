@@ -22,7 +22,7 @@ let PORT =  process.env.PORT || 8080;
 app.use(cors())
 app.use(bodyParser.json({limit: '200mb'}))
 
-app.post('/login', (req, res) => {
+app.post('/api/login', (req, res) => {
 
     if(req.body.email && req.body.password){
         credinals.find({ email: req.body.email })
@@ -51,7 +51,7 @@ app.post('/login', (req, res) => {
     res.sendStatus(500);
 })
 
-app.post('/signup', (req, res) => {
+app.post('/api/signup', (req, res) => {
 
     console.log(req.body);
     if(req.body.name && req.body.email && req.body.password){
@@ -72,19 +72,19 @@ app.post('/signup', (req, res) => {
     
 })
 
-app.get('/home', (req, res) => {
+app.get('/api/home', (req, res) => {
 
     res.send({ display: parsed.name });  
 
 })
 
-app.get('/test', (req, res) => {
+app.get('/api/test', (req, res) => {
 
     res.send('Greetings!')
 
 })
 
-app.post('/submit', (req, res) => {
+app.post('/api/submit', (req, res) => {
 
     let currentdate = new Date(); 
     let datetime =  "Published At: "+ currentdate.getHours() + ":"  
@@ -111,7 +111,7 @@ app.post('/submit', (req, res) => {
 
 })
 
-app.get('/memos', (req, res) => {
+app.get('/api/memos', (req, res) => {
 
     memos.find().then((data) => {
 
@@ -121,7 +121,7 @@ app.get('/memos', (req, res) => {
 
 })
 
-app.delete('/memos/:id', (req, res) => {
+app.delete('/api/memos/:id', (req, res) => {
 
     memos.findOneAndRemove({ _id: req.params.id }).then(() => {
         console.log(`Telling MongoDB to delete ${req.params.id}`)
@@ -129,7 +129,7 @@ app.delete('/memos/:id', (req, res) => {
 
 })
 
-app.patch('/memos/:id', async (req, res) => {
+app.patch('/api/memos/:id', async (req, res) => {
 
     console.log(req.body.toChange)
     console.log(req.body.toBeChanged)
