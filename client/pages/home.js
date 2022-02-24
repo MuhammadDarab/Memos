@@ -5,14 +5,10 @@ import Image from 'next/image';
 
 export const getServerSideProps = async () => {
 
-  let data = await fetch(`${ip}/home`, {
-    mode:'no-cors'
-  })
+  let data = await fetch(`${ip}/home`)
   let displayName = await data.json();
 
-  let values = await fetch(`${ip}/memos`,{
-    mode:'no-cors'
-  })
+  let values = await fetch(`${ip}/memos`)
   let memos = await values.json();
 
   return {
@@ -102,8 +98,7 @@ export default function Home ({ displayName, memos }) {
 async function DeleteElem(id) {
 
   let delReq = await fetch(`${ip}/memos/${id}`, {
-    method: 'DELETE',
-    mode:'no-cors'
+    method: 'DELETE'
   })
 
   console.log('delReq has been send')
@@ -127,7 +122,6 @@ async function ConfirmElem(id, toBeChanged, router) {
   router.push('/home')
   let sendUpdate = await fetch(`${ip}/memos/${id}`, {
     method: 'PATCH',
-    mode:'no-cors',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(data)
   })

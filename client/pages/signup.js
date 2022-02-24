@@ -19,7 +19,6 @@ const Signup = () => {
         let data = {name:nameSignUp.value, email: emailSignUp.value, password: passwordSignUp.value};
         await fetch(`${ip}/signup`, {
         method: 'POST',
-        mode:'no-cors',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
         }).then(response => {
