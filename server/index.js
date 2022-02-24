@@ -51,7 +51,6 @@ app.post('/login', (req, res) => {
     res.sendStatus(500);
 })
 
-app.use(cors())
 app.post('/signup', (req, res) => {
 
     console.log(req.body);
@@ -73,21 +72,18 @@ app.post('/signup', (req, res) => {
     
 })
 
-app.use(cors())
 app.get('/home', (req, res) => {
 
     res.send({ display: parsed.name });  
 
 })
 
-app.use(cors())
 app.get('/test', (req, res) => {
 
     res.send('Greetings!')
 
 })
 
-app.use(cors())
 app.post('/submit', (req, res) => {
 
     let currentdate = new Date(); 
@@ -115,7 +111,6 @@ app.post('/submit', (req, res) => {
 
 })
 
-app.use(cors())
 app.get('/memos', (req, res) => {
 
     memos.find().then((data) => {
@@ -126,7 +121,6 @@ app.get('/memos', (req, res) => {
 
 })
 
-app.use(cors())
 app.delete('/memos/:id', (req, res) => {
 
     memos.findOneAndRemove({ _id: req.params.id }).then(() => {
@@ -135,7 +129,6 @@ app.delete('/memos/:id', (req, res) => {
 
 })
 
-app.use(cors())
 app.patch('/memos/:id', async (req, res) => {
 
     console.log(req.body.toChange)
