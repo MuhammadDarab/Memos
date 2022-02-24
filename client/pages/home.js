@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import ip from "../components/ip";
+import Image from 'next/image';
 
 export const getServerSideProps = async () => {
 
@@ -49,7 +50,7 @@ export default function Home ({ displayName, memos }) {
               <div className="shadow-lg mx-auto w-[600px]">
                 <div className="text-left p-8 drop-shadow-md object-cover">
                   <div className="bg-blue-900">
-                    <img src={each.picture64} />
+                    <Image src={each.picture64} />
                   </div>
                   <h1 className="text-2xl font-light">{each.desc}</h1>
                   <h4 className="text-slate-400">{each.author}</h4>
@@ -57,11 +58,11 @@ export default function Home ({ displayName, memos }) {
                 </div>
                   <div className="flex flex-row pb-14 pl-8">
 
-                      <img src="https://freepikpsd.com/file/2019/10/delete-icon-png-red-5-Transparent-Images.png" alt="Delete!" className="h-auto w-12 hover:scale-150 transition-all hover:transition-all" onClick={() => {
+                      <Image src="https://freepikpsd.com/file/2019/10/delete-icon-png-red-5-Transparent-Images.png" alt="Delete!" className="h-auto w-12 hover:scale-150 transition-all hover:transition-all" onClick={() => {
                         DeleteElem(each._id)
                       }} />
 
-                      <img src="Edit.png" alt="Edit!" className="h-auto w-12 hover:opacity-100 opacity-100 hover:scale-150 transition-all hover:transition-all" onClick={() => {
+                      <Image src="Edit.png" alt="Edit!" className="h-auto w-12 hover:opacity-100 opacity-100 hover:scale-150 transition-all hover:transition-all" onClick={() => {
                         openModal(each._id)
                       }} />
 
