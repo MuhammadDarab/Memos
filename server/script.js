@@ -15,7 +15,8 @@ mongoose.connect(DB)
 .catch((err) => console.log('Error Occured!' + err))
 
 const app = express();
-let PORT = 8080;
+let HOST = 'ENVIP';
+let PORT =  process.env.PORT || 8080;
 
 
 app.use(cors())
@@ -136,5 +137,5 @@ app.patch('/memos/:id', async (req, res) => {
 })
 
 
-app.listen(PORT, () => {console.log(`http://localhost:${PORT}`)})
+app.listen(PORT, () => {console.log(`${HOST}:${PORT}`)})
 
