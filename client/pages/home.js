@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import ip from "../components/ip";
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 
   let data = await fetch(`${ip}/home`)
   let displayName = await data.json();
