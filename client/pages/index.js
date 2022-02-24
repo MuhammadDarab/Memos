@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import ip from "./ip";
+import ip from "../components/ip";
 
 function err(res){
 

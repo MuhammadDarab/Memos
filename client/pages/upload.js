@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react';
-import ip from "./ip";
+import ip from "../components/ip";
 
 export async function snapSend(router) {
 

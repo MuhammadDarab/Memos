@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import ip from "./ip";
+import ip from "../components/ip";
 
 export const getStaticProps = async () => {
 
