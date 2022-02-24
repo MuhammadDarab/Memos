@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-
-let ip = 'https://memosback.vercel.app'
-
+import ip from "./ip";
 
 const Signup = () => {
 

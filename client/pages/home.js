@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-
-let ip = 'https://memosback.vercel.app'
+import ip from "./ip";
 
 export const getStaticProps = async () => {
 

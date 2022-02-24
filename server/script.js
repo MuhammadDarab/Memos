@@ -134,9 +134,6 @@ app.patch('/memos/:id', async (req, res) => {
     console.log(req.body.toChange)
     console.log(req.body.toBeChanged)
 
-    // memos.findOne({_id: req.params.id}).then((result) => { 
-    //     result.update({desc: req.body.desc})
-    // })
    await memos.findOneAndUpdate({ desc: req.body.toBeChanged },{ desc: req.body.toChange })
    console.log("changes Made");
 

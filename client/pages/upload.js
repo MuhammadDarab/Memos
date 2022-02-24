@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react';
-
-let ip = 'https://memosback.vercel.app'
+import ip from "./ip";
 
 export async function snapSend(router) {
 
