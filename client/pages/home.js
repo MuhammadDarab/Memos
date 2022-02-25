@@ -50,7 +50,7 @@ export default function Home ({ displayName, memos }) {
               <div className="shadow-lg mx-auto w-[600px]">
                 <div className="text-left p-8 drop-shadow-md object-cover">
                   <div className="bg-blue-900">
-                    <Image src={each.picture64} />
+                  <Image src={each.picture64} width={640} height={480} />
                   </div>
                   <h1 className="text-2xl font-light">{each.desc}</h1>
                   <h4 className="text-slate-400">{each.author}</h4>
