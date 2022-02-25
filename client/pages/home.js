@@ -49,7 +49,7 @@ export default function Home ({ displayName, memos }) {
             <div key={each._id} className="p-8">
               <div className="shadow-lg mx-auto w-[600px]">
                 <div className="text-left p-8 drop-shadow-md object-cover">
-                  <div className="bg-blue-900">
+                  <div>
                   <Image src={each.picture64} width={640} height={480} />
                   </div>
                   <h1 className="text-2xl font-light">{each.desc}</h1>
