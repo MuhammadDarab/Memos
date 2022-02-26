@@ -29,6 +29,7 @@ export async function snapSend(router) {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
         }).then(() => {
+            count = 0
             router.push('/home')
         });
 
