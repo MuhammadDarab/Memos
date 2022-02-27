@@ -115,6 +115,7 @@ app.get('/memos', (req, res) => {
 
     memos.find().then((data) => {
 
+        data.reverse();
         res.send(data);
 
     })

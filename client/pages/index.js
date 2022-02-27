@@ -68,6 +68,9 @@ export default function Home() {
   }
 
   return (<div>
+
+    <title> Login To Memo! </title>
+
       <h1 className="text-center text-blue-500 font-body p-8 text-3xl">
         Memos
       </h1>

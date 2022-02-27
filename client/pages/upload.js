@@ -52,10 +52,10 @@ const Upload = () => {
     })
 
 
-    return (<>
+    return (<div className='flex flex-col mx-auto'>
     
-        <title> Memos | Feed </title>
-        <div className="text-center ">
+        <title> Memos | Upload </title>
+        <div className="text-center self-center mx-auto">
             
             <div className="text-3xl p-8 font-bold text-gray-700">
                 Capture a Memo!
@@ -75,7 +75,7 @@ const Upload = () => {
                 <div className="text-xl">
                 Description
                 </div>
-                <textarea placeholder='Share Details about your Memo!' id="textarea" cols="50" rows="2" className='border-[1px] p-4 border-black shadow-lg'></textarea>
+                <textarea placeholder='Share Details about your Memo!' id="textarea" cols="50" rows="2" className='text-center border-[1px] p-4 border-black shadow-lg'></textarea>
             </div>
 
             <div className="bg-blue-500 w-24 m-auto text-white rounded-xl p-2" onClick={() => {snapSend(router)}}>
@@ -83,7 +83,7 @@ const Upload = () => {
             </div>
 
         </div>
-    </>);
+    </div>);
 }
 
 export default Upload;

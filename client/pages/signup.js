@@ -40,8 +40,8 @@ const Signup = () => {
 
     }
     
-    return (
-
+    return (<div>
+          <title> Welcome To Memo! </title>
         <div>
             <h1 className="text-center text-blue-500 font-body p-8 text-3xl">
             Memos
@@ -67,11 +67,10 @@ const Signup = () => {
           Lets Get Started!
         </div>
 
-
-
         </div>
         </div>
 
+      </div>
     );
 }
  
