@@ -18,7 +18,10 @@ export async function snapSend(router) {
         let video = document.querySelector('#video');
         let description = document.querySelector('#textarea').value;
         let clicked = document.getElementById('#clicked');
-        clicked.style.display = 'block'
+        clicked.style.display = 'block';
+
+        let subBtn = document.querySelector('#subBtn');
+        subBtn.style.display = 'none';
 
         context.drawImage(video, 0, 0, 640, 480);
         let img64 = canvas.toDataURL();
@@ -75,10 +78,11 @@ const Upload = () => {
 
             <div id='#clicked' className='text-xl text-white text-bold w-80 mx-auto bg-green-500 border-2 border-slate-500 p-4 m-4 rounded-2xl hidden'>
                 Clicked Your Memo!, <br />
-                Please Wait a Litte!
+                Please Wait a Litte! <br />
+                You will be redirected in just a couple of seconds!
             </div>
 
-            <div className="bg-blue-500 w-24 m-auto text-white rounded-xl p-2" onClick={() => {snapSend(router)}}>
+            <div className="bg-blue-500 w-24 m-auto text-white rounded-xl p-2" id='subBtn' onClick={() => {snapSend(router)}}>
                 SUBMIT!
             </div>
 
