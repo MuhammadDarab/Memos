@@ -19,7 +19,12 @@ let HOST = 'ENVIP';
 let PORT =  process.env.PORT || 8080;
 
 
-app.use(cors())
+app.use(cors({
+
+    origin:"*",
+    methods:["GET", "PUT", "POST", "PATCH", "DELETE"]
+
+}))
 app.use(bodyParser.json({limit: '200mb'}))
 
 app.post('/login', (req, res) => {
