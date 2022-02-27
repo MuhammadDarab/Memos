@@ -67,9 +67,11 @@ export default function Home() {
 
   }
 
-  return (<div>
+  return (<div className='flex flex-col mx-auto'>
 
     <title> Login To Memo! </title>
+
+      <div className='text-center self-center mx-auto'>
 
       <h1 className="text-center text-blue-500 font-body p-8 text-3xl">
         Memos
@@ -108,6 +110,8 @@ export default function Home() {
       </div>
 
       <div id='errBox' className='opacity-0 hover:transition-all transition-all  rounded-xl text-xl text-center font-bold w-96 mx-auto p-8 bg-red-400 border-[1px] border-slate-500 text-white'>
+      </div>
+
       </div>
 
     </div>

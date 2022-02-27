@@ -40,9 +40,9 @@ const Signup = () => {
 
     }
     
-    return (<div>
+    return (<div className='flex flex-col mx-auto'>
           <title> Welcome To Memo! </title>
-        <div>
+        <div  className='text-center self-center mx-auto'>
             <h1 className="text-center text-blue-500 font-body p-8 text-3xl">
             Memos
             </h1>

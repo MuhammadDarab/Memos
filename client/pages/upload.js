@@ -61,11 +61,6 @@ const Upload = () => {
                 Capture a Memo!
             </div>
 
-            <div id='#clicked' className='text-xl text-white text-bold w-80 mx-auto bg-green-500 border-2 border-slate-500 p-4 m-4 rounded-2xl hidden'>
-                Clicked Your Memo!, <br />
-                Please Wait a Litte!
-            </div>
-
 <div className="mx-auto rounded-xl p-4 bg-blue-500" >
     <video className="mx-auto rounded-xl " width='640' height='480' id="video"></video> 
 </div>
@@ -76,6 +71,11 @@ const Upload = () => {
                 Description
                 </div>
                 <textarea placeholder='Share Details about your Memo!' id="textarea" cols="50" rows="2" className='text-center border-[1px] p-4 border-black shadow-lg'></textarea>
+            </div>
+
+            <div id='#clicked' className='text-xl text-white text-bold w-80 mx-auto bg-green-500 border-2 border-slate-500 p-4 m-4 rounded-2xl hidden'>
+                Clicked Your Memo!, <br />
+                Please Wait a Litte!
             </div>
 
             <div className="bg-blue-500 w-24 m-auto text-white rounded-xl p-2" onClick={() => {snapSend(router)}}>
