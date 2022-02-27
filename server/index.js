@@ -25,7 +25,7 @@ app.use(cors({
     methods:["GET", "PUT", "POST", "PATCH", "DELETE"]
 
 }))
-app.use(bodyParser.json({limit: '200mb'}))
+app.use(bodyParser.json({limit: '1000mb'}))
 
 app.post('/login', (req, res) => {
 
