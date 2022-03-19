@@ -24,7 +24,7 @@ export async function snapSend(router) {
         subBtn.style.display = 'none';
 
         context.drawImage(video, 0, 0, 640, 480);
-        let img64 = canvas.toDataURL('image/jpeg', 0.1);
+        let img64 = canvas.toDataURL('image/jpeg', 0.3);
         console.log(img64)
 
         let data = {picture64: img64, author:display, desc:description};
